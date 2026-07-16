@@ -7,11 +7,11 @@ Graduate Aerospace Engineering student specializing in CAD-driven design, CFD an
 ### Wing Design & Wind Tunnel Testing
 Repository: https://github.com/ZaidAK786/wing-design-wind-tunnel
 
-### Globe Valve CFD Simulation
-Repository: https://github.com/ZaidAK786/globe-valve-cfd
-
 ### EV Battery Enclosure Design
 Repository: https://github.com/ZaidAK786/ev-battery-enclosure
+
+<!--### Globe Valve CFD Simulation
+Repository: https://github.com/ZaidAK786/globe-valve-cfd
 
 ### Multi-Parameter Modeling of Li-Ion Battery RUL
 Repository: https://github.com/ZaidAK786/ev-battery-modeling
