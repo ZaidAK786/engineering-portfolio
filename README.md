@@ -2,7 +2,7 @@
 
 Graduate Aerospace Engineering student specializing in CAD-driven design, CFD analysis, and engineering system validation. Experienced in developing mechanical prototypes, conducting high-fidelity simulations, and translating theoretical models into practical engineering solutions. Passionate about applying AI/ML and data science to advance simulation-driven engineering.
 
-Link to portfolio document: https://1drv.ms/f/c/a235e695a7cc3f0f/IgAcpE21eNINR6NEqFjYQ9xWAYtSrh8jnkfaAIw0aI83A_0?e=egn5np
+Link to portfolio document: [https://1drv.ms/f/c/a235e695a7cc3f0f/IgAcpE21eNINR6NEqFjYQ9xWAYtSrh8jnkfaAIw0aI83A_0?e=egn5np](https://tinyurl.com/ZK-eng-portfolio)
 
 ## Featured Projects
 
