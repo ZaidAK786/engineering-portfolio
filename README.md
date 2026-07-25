@@ -17,3 +17,7 @@ Repository: https://github.com/ZaidAK786/globe-valve-cfd
 -->
 ### Multi-Parameter Modeling of Li-Ion Battery RUL
 Doc: https://github.com/ZaidAK786/engineering-portfolio/Data-Driven Modeling Project.pdf
+<a href="https://zaidak786.github.io/engineering-portfolio/Data-DrivenModelingProject.pdf" target="_blank">
+  <img src="./preview.png" alt="Click to open PDF report" width="100%" />
+</a>
+<p align="center"><em>Click the preview image above to view the full PDF report in-browser.</em></p>
