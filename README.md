@@ -15,5 +15,5 @@ Repository: https://github.com/ZaidAK786/ev-battery-enclosure
 <!--### Globe Valve CFD Simulation
 Repository: https://github.com/ZaidAK786/globe-valve-cfd
 
-### Multi-Parameter Modeling of Li-Ion Battery RUL
-Repository: https://github.com/ZaidAK786/ev-battery-modeling
+Multi-Parameter Modeling of Li-Ion Battery RUL
+Doc: 
