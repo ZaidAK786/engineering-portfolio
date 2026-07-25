@@ -16,7 +16,7 @@ Repository: https://github.com/ZaidAK786/ev-battery-enclosure
 Repository: https://github.com/ZaidAK786/globe-valve-cfd
 -->
 ### Multi-Parameter Modeling of Li-Ion Battery RUL
-
+📄 **[View Full Technical Report (In-Browser PDF)](https://<your-username>.github.io/engineering-portfolio/your-file-name.pdf)**
 <a href="https://zaidak786.github.io/engineering-portfolio/Data-DrivenModelingProject.pdf" target="_blank">
   <p align="center"><img src="./battery.png" alt="Click to open PDF report" width="80%" />
 </a>
