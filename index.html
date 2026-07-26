@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Engineering Portfolio | Systems, Simulation & Design</title>
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: https:; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline';">
+    <title>Zaid Ahmad Khan | Systems, Simulation & Autonomous Research</title>
+    <link rel="stylesheet" href="./web.css">
     <style>
-        <link rel="stylesheet" href="web.css">
         :root {
             --bg-color: #0d1117;
             --card-bg: #161b22;
@@ -18,354 +19,170 @@
             --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
         }
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-family);
-            line-height: 1.6;
-            padding: 2rem 1rem;
-        }
-
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        /* --- Header Section --- */
-        header {
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 2rem;
-            margin-bottom: 2.5rem;
-        }
-
-        .header-title {
-            font-size: 2.5rem;
-            color: var(--text-heading);
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-        }
-
-        .header-subtitle {
-            font-size: 1.1rem;
-            color: var(--accent-blue);
-            margin-bottom: 1rem;
-        }
-
-        .header-bio {
-            max-width: 800px;
-            font-size: 0.98rem;
-            color: #8b949e;
-        }
-
-        .nav-links {
-            margin-top: 1.2rem;
-            display: flex;
-            gap: 1rem;
-        }
-
-        .nav-links a {
-            color: var(--text-main);
-            text-decoration: none;
-            font-size: 0.9rem;
-            padding: 0.4rem 0.8rem;
-            border: 1px solid var(--border-color);
-            border-radius: 6px;
-            transition: all 0.2s ease;
-        }
-
-        .nav-links a:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        /* --- Filter Controls --- */
-        .controls {
-            display: flex;
-            gap: 0.75rem;
-            margin-bottom: 2rem;
-            flex-wrap: wrap;
-        }
-
-        .filter-btn {
-            background-color: var(--card-bg);
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 500;
-            transition: all 0.2s ease;
-        }
-
-        .filter-btn:hover, .filter-btn.active {
-            background-color: var(--accent-blue);
-            color: #ffffff;
-            border-color: var(--accent-blue);
-        }
-
-        /* --- Portfolio Grid --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 1.5rem;
-        }
-
-        .card {
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            transition: transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .card:hover {
-            transform: translateY(-4px);
-            border-color: #8b949e;
-        }
-
-        .card-img-container {
-            width: 100%;
-            height: 200px;
-            background-color: #010409;
-            overflow: hidden;
-            position: relative;
-            cursor: pointer;
-        }
-
-        .card-img-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .card-img-container:hover img {
-            transform: scale(1.05);
-        }
-
-        .card-body {
-            padding: 1.25rem;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .card-tag {
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            font-weight: 600;
-            color: var(--accent-purple);
-            margin-bottom: 0.4rem;
-        }
-
-        .card-title {
-            font-size: 1.2rem;
-            color: var(--text-heading);
-            margin-bottom: 0.6rem;
-        }
-
-        .card-description {
-            font-size: 0.9rem;
-            color: #8b949e;
-            margin-bottom: 1.2rem;
-            flex-grow: 1;
-        }
-
-        .card-actions {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .btn {
-            font-size: 0.85rem;
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
-            text-decoration: none;
-            display: inline-block;
-            cursor: pointer;
-            text-align: center;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-green);
-            color: #ffffff;
-            border: none;
-        }
-
-        .btn-primary:hover {
-            background-color: #2ea043;
-        }
-
-        .btn-secondary {
-            background-color: transparent;
-            color: var(--text-main);
-            border: 1px solid var(--border-color);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        /* --- PDF & Image Lightbox Modal --- */
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
-            z-index: 1000;
-            justify-content: center;
-            align-items: center;
-            padding: 2rem;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .modal-content {
-            position: relative;
-            width: 100%;
-            max-width: 900px;
-            max-height: 90vh;
-            background-color: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 1.5rem;
-            color: #ffffff;
-            cursor: pointer;
-            z-index: 1010;
-        }
-
-        .modal-body {
-            width: 100%;
-            height: 80vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .modal-body img {
-            max-width: 100%;
-            max-height: 100%;
-            object-fit: contain;
-        }
-
-        .modal-body embed {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-
-        /* Responsive Fixes */
-        @media (max-width: 600px) {
-            .header-title { font-size: 1.8rem; }
-            .grid { grid-template-columns: 1fr; }
-            .modal { padding: 0.5rem; }
-        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body { background-color: var(--bg-color); color: var(--text-main); font-family: var(--font-family); line-height: 1.6; padding: 2rem 1rem; }
+        .container { max-width: 1100px; margin: 0 auto; }
+        header { border-bottom: 1px solid var(--border-color); padding-bottom: 2rem; margin-bottom: 2.5rem; }
+        .header-title { font-size: 2.5rem; color: var(--text-heading); font-weight: 700; margin-bottom: 0.5rem; }
+        .header-subtitle { font-size: 1.1rem; color: var(--accent-blue); margin-bottom: 1rem; }
+        .header-bio { max-width: 800px; font-size: 0.98rem; color: #8b949e; }
+        .nav-links { margin-top: 1.2rem; display: flex; gap: 1rem; flex-wrap: wrap; }
+        .nav-links a { color: var(--text-main); text-decoration: none; font-size: 0.9rem; padding: 0.4rem 0.8rem; border: 1px solid var(--border-color); border-radius: 6px; transition: all 0.2s ease; cursor: pointer; }
+        .nav-links a:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+        .controls { display: flex; gap: 0.75rem; margin-bottom: 2rem; flex-wrap: wrap; }
+        .filter-btn { background-color: var(--card-bg); color: var(--text-main); border: 1px solid var(--border-color); padding: 0.5rem 1.2rem; border-radius: 20px; cursor: pointer; font-size: 0.9rem; font-weight: 500; transition: all 0.2s ease; }
+        .filter-btn:hover, .filter-btn.active { background-color: var(--accent-blue); color: #ffffff; border-color: var(--accent-blue); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 1.5rem; }
+        .card { background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; transition: transform 0.2s ease, border-color 0.2s ease; }
+        .card:hover { transform: translateY(-4px); border-color: #8b949e; }
+        .card-img-container { width: 100%; height: 200px; background-color: #010409; overflow: hidden; position: relative; cursor: pointer; }
+        .card-img-container img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s ease; }
+        .card-img-container:hover img { transform: scale(1.05); }
+        .card-body { padding: 1.25rem; display: flex; flex-direction: column; flex-grow: 1; }
+        .card-tag { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; font-weight: 600; color: var(--accent-purple); margin-bottom: 0.4rem; }
+        .card-title { font-size: 1.2rem; color: var(--text-heading); margin-bottom: 0.6rem; }
+        .card-description { font-size: 0.9rem; color: #8b949e; margin-bottom: 1.2rem; flex-grow: 1; }
+        .card-actions { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+        .btn { font-size: 0.85rem; padding: 0.4rem 0.8rem; border-radius: 6px; text-decoration: none; display: inline-block; cursor: pointer; text-align: center; border: none; }
+        .btn-primary { background-color: var(--accent-green); color: #ffffff; }
+        .btn-primary:hover { background-color: #2ea043; }
+        .btn-secondary { background-color: transparent; color: var(--text-main); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { border-color: var(--accent-blue); color: var(--accent-blue); }
+        .modal { display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.85); z-index: 1000; justify-content: center; align-items: center; padding: 2rem; }
+        .modal.active { display: flex; }
+        .modal-content { position: relative; width: 100%; max-width: 900px; max-height: 90vh; background-color: var(--card-bg); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
+        .modal-close { position: absolute; top: 10px; right: 15px; font-size: 1.5rem; color: #ffffff; cursor: pointer; z-index: 1010; }
+        .modal-body { width: 100%; height: 80vh; display: flex; justify-content: center; align-items: center; }
+        .modal-body img { max-width: 100%; max-height: 100%; object-fit: contain; }
+        .modal-body embed { width: 100%; height: 100%; border: none; }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <!-- Header / Bio Section -->
         <header>
-            <h1 class="header-title">Engineering Portfolio</h1>
-            <div class="header-subtitle">Aerospace, Fluids & Autonomous Systems Research</div>
+            <h1 class="header-title">Zaid Ahmad Khan</h1>
+            <div class="header-subtitle">Mechanical & Aerospace Systems | Machine Learning | Autonomous Racing</div>
             <p class="header-bio">
                 Translating physical dynamics into high-fidelity simulations and physical architectures. 
-                Focused on Computational Fluid Dynamics (CFD), structural analysis, and machine learning models 
+                Focused on Computational Fluid Dynamics (CFD), structural analysis, and physics-informed deep learning models 
                 for dynamic physical environments.
             </p>
             <div class="nav-links">
                 <a href="https://github.com/ZaidAK786" target="_blank">GitHub Profile</a>
                 <a href="https://www.linkedin.com/in/zaid-khan-b682a0216" target="_blank">LinkedIn</a>
-                <a href="#" onclick="openPdfModal('assets/resume.pdf')">View Resume (PDF)</a>
+                <a id="resumeLink">View Resume (PDF)</a>
             </div>
         </header>
 
-        <!-- Category Filters -->
         <div class="controls">
-            <button class="filter-btn active" onclick="filterSelection('all')">All Works</button>
-            <button class="filter-btn" onclick="filterSelection('theoretical')">Theoretical & Sim</button>
-            <button class="filter-btn" onclick="filterSelection('design')">CAD & Structural Design</button>
-            <button class="filter-btn" onclick="filterSelection('physical')">Physical Builds</button>
+            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn" data-filter="theoretical">Theoretical & AI</button>
+            <button class="filter-btn" data-filter="design">CAD & Structural FEA</button>
+            <button class="filter-btn" data-filter="physical">Physical Builds</button>
         </div>
 
-        <!-- Portfolio Items Grid -->
         <div class="grid">
 
-            <!-- Item 1: Theoretical / Simulation -->
+            <!-- PROJECT 1: DEEPONET -->
             <div class="card theoretical">
-                <div class="card-img-container" onclick="openImageModal('./assets/deeponet-comparison.png')">
-                    <img src="./assets/deeponet-comparison.png" alt="CFD Mesh and Simulation" onerror="this.src='https://via.placeholder.com/600x400/161b22/58a6ff?text=CFD+Boundary+Layer+Analysis'">
+                <div class="card-img-container" data-img="./assets/deeponet-comparison.png">
+                    <img src="./assets/deeponet-comparison.png" alt="Contextual DeepONet Fluid Operator" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'100%\' height=\'100%\' fill=\'%23161b22\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2358a6ff\' font-family=\'sans-serif\' font-size=\'18\'>Contextual DeepONet Model</text></svg>';">
                 </div>
                 <div class="card-body">
-                    <span class="card-tag">Theoretical / Physics</span>
-                    <h2 class="card-title">Boundary Layer Turbulence Modeling</h2>
+                    <span class="card-tag">Theoretical / Physics AI</span>
+                    <h2 class="card-title">Contextual DeepONet Fluid Operator</h2>
                     <p class="card-description">
-                        High-fidelity OpenFOAM simulation analyzing turbulent boundary layer transitions. Evaluated mesh independence and wall-function accuracy against empirical data.
+                        Neural operator architecture trained on CFDBench to map infinite-dimensional functional spaces for real-time fluid dynamics surrogate modeling.
                     </p>
                     <div class="card-actions">
-                        <button class="btn btn-primary" onclick="openPdfModal('reports/Final_Report_513_ZK.pdf')">Read Report (PDF)</button>
+                        <button class="btn btn-primary open-pdf-btn" data-pdf="./assets/deeponet_report.pdf">Read Research (PDF)</button>
                         <a href="https://github.com/ZaidAK786/engineering-portfolio" class="btn btn-secondary" target="_blank">Code Repo</a>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 2: CAD / Design -->
+            <!-- PROJECT 2: EV BATTERY ENCLOSURE -->
             <div class="card design">
-                <div class="card-img-container" onclick="openImageModal('./assets/bevel-gear.png')">
-                    <img src="./assets/bevel-gear.png" alt="3D CAD Assembly" onerror="this.src='https://via.placeholder.com/600x400/161b22/a371f7?text=Modular+CAD+Assembly'">
+                <div class="card-img-container" data-img="./assets/ev_battery_fea.png">
+                    <img src="./assets/ev_battery_fea.png" alt="EV Battery Stress Analysis" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'100%\' height=\'100%\' fill=\'%23161b22\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23a371f7\' font-family=\'sans-serif\' font-size=\'18\'>EV Battery Structural FEA</text></svg>';">
                 </div>
                 <div class="card-body">
                     <span class="card-tag">CAD & FEA Design</span>
-                    <h2 class="card-title">EV Enclosure Static Stress Analysis</h2>
+                    <h2 class="card-title">EV Battery Enclosure Joint Analysis</h2>
                     <p class="card-description">
-                        SolidWorks FEA evaluation of structural joint loading under high static shear. Optimized material thickness to achieve a 18% weight reduction without compromising safety factors.
+                        Static stress and joint load analysis of an electric vehicle battery enclosure under severe mechanical vibration and shear constraints.
                     </p>
                     <div class="card-actions">
-                        <a href="https://github.com/ZaidAK786/ev-battery-enclosure" class="btn btn-secondary" target="_blank">Code Repo</a>
+                        <button class="btn btn-primary open-pdf-btn" data-pdf="./assets/battery_fea_deck.pdf">View Slide Deck (PDF)</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Item 3: Physical Build / Robotics -->
+            <!-- PROJECT 3: NEORACER ML PLATFORM -->
             <div class="card physical">
-                <div class="card-img-container" onclick="openImageModal('./assets/RL-racecar-tensorboard.png')">
-                    <img src="./assets/RL-racecar-tensorboard.png" alt="Hardware Autonomous Vehicle" onerror="this.src='https://via.placeholder.com/600x400/161b22/238636?text=Hardware+Autonomous+Platform'">
+                <div class="card-img-container" data-img="./assets/neoracer_platform.png">
+                    <img src="./assets/neoracer_platform.png" alt="NeoRacer Autonomous Platform" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'100%\' height=\'100%\' fill=\'%23161b22\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23238636\' font-family=\'sans-serif\' font-size=\'18\'>NeoRacer Jetson Integration</text></svg>';">
                 </div>
                 <div class="card-body">
-                    <span class="card-tag">Physical Build</span>
-                    <h2 class="card-title">Autonomous Racing Chassis Integration</h2>
+                    <span class="card-tag">Physical Build / ML</span>
+                    <h2 class="card-title">NeoRacer Autonomous AV Research</h2>
                     <p class="card-description">
-                        Complete physical integration of NVIDIA Jetson sensor fusion suite onto custom 1/10 scale chassis. Embedded ML vision pipelines for real-time path planning.
+                        NVIDIA Jetson-powered ML model optimization and sensor fusion pipelines for dynamic autonomous racing platforms at Neobotics Foundation.
                     </p>
                     <div class="card-actions">
-                        <button class="btn btn-primary" onclick="openImageModal('./assets/RL-racecar-tensorboard.png')">View Build Specs</button>
-                        <a href="https://github.com/ZaidAK786/bwsi-ta" class="btn btn-secondary" target="_blank">View Firmware</a>
+                        <button class="btn btn-primary open-pdf-btn" data-pdf="./assets/neoracer_specs.pdf">View System Architecture</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMPLATE 4: TURBULENT FLOW & POD/VAE (READY TO LINK) -->
+            <div class="card theoretical">
+                <div class="card-img-container" data-img="./assets/pod_vae_turbulence.png">
+                    <img src="./assets/pod_vae_turbulence.png" alt="POD & Variational Autoencoder Turbulence" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'100%\' height=\'100%\' fill=\'%23161b22\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%2358a6ff\' font-family=\'sans-serif\' font-size=\'18\'>POD & VAE Reduced Order Modeling</text></svg>';">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Theoretical / Fluid Dynamics</span>
+                    <h2 class="card-title">Turbulent Flow Reduced-Order Modeling</h2>
+                    <p class="card-description">
+                        Proper Orthogonal Decomposition (POD) combined with Variational Autoencoders (VAEs) for low-dimensional coherent structure extraction in turbulent shear flows.
+                    </p>
+                    <div class="card-actions">
+                        <button class="btn btn-primary open-pdf-btn" data-pdf="./assets/pod_vae_report.pdf">Read Paper (PDF)</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMPLATE 5: SNIPS ROBOTICS COMMAND PARSER (READY TO LINK) -->
+            <div class="card theoretical">
+                <div class="card-img-container" data-img="./assets/nlp_robotics_parser.png">
+                    <img src="./assets/nlp_robotics_parser.png" alt="Robotics NLP Command Parser" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'100%\' height=\'100%\' fill=\'%2358a6ff\' font-family=\'sans-serif\' font-size=\'18\'>SNIPS Natural Language Parser</text></svg>';">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">Theoretical / Robotics NLP</span>
+                    <h2 class="card-title">Natural Language Robotics Command Parser</h2>
+                    <p class="card-description">
+                        Intent extraction and slot-filling NLP architecture trained on HuggingFace SNIPS for intent-driven autonomous robot execution.
+                    </p>
+                    <div class="card-actions">
+                        <button class="btn btn-primary open-pdf-btn" data-pdf="./assets/snips_parser_doc.pdf">View Architecture</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- TEMPLATE 6: HIGH-REYNOLDS BLASIUS BOUNDARY LAYER (READY TO LINK) -->
+            <div class="card design">
+                <div class="card-img-container" data-img="./assets/blasius_cfd_study.png">
+                    <img src="./assets/blasius_cfd_study.png" alt="Blasius Boundary Layer Study" onerror="this.onerror=null; this.src='data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\' width=\'600\' height=\'400\' viewBox=\'0 0 600 400\'><rect width=\'100%\' height=\'100%\' fill=\'%23161b22\'/><text x=\'50%\' y=\'50%\' dominant-baseline=\'middle\' text-anchor=\'middle\' fill=\'%23a371f7\' font-family=\'sans-serif\' font-size=\'18\'>OpenFOAM Boundary Layer Study</text></svg>';">
+                </div>
+                <div class="card-body">
+                    <span class="card-tag">CAD & Aerodynamics</span>
+                    <h2 class="card-title">Boundary Layer Transition Analysis</h2>
+                    <p class="card-description">
+                        OpenFOAM mesh sensitivity study evaluating wall-function boundary conditions against empirical Blasius laminar and turbulent profiles.
+                    </p>
+                    <div class="card-actions">
+                        <button class="btn btn-primary open-pdf-btn" data-pdf="./assets/boundary_layer_study.pdf">Read Study (PDF)</button>
                     </div>
                 </div>
             </div>
@@ -376,60 +193,88 @@
     <!-- Modal for Viewing Images & PDFs In-Browser -->
     <div class="modal" id="mediaModal">
         <div class="modal-content">
-            <span class="modal-close" onclick="closeModal()">&times;</span>
-            <div class="modal-body" id="modalBody">
-                <!-- Content dynamically injected via JavaScript -->
-            </div>
+            <span class="modal-close" id="modalCloseBtn">&times;</span>
+            <div class="modal-body" id="modalBody"></div>
         </div>
     </div>
 
     <script>
-        // Category Filter Logic
-        function filterSelection(category) {
+        document.addEventListener('DOMContentLoaded', function() {
+            // Safe Filter Functionality
+            const filterBtns = document.querySelectorAll('.filter-btn');
             const cards = document.querySelectorAll('.card');
-            const buttons = document.querySelectorAll('.filter-btn');
 
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                    const category = this.getAttribute('data-filter');
 
-            cards.forEach(card => {
-                if (category === 'all') {
-                    card.style.display = 'flex';
-                } else {
-                    if (card.classList.contains(category)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
+                    cards.forEach(card => {
+                        if (category === 'all' || card.classList.contains(category)) {
+                            card.style.display = 'flex';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
             });
-        }
 
-        // Modal Lightbox Functions
-        const modal = document.getElementById('mediaModal');
-        const modalBody = document.getElementById('modalBody');
+            // Safe Modal System
+            const modal = document.getElementById('mediaModal');
+            const modalBody = document.getElementById('modalBody');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+            const resumeLink = document.getElementById('resumeLink');
 
-        function openImageModal(imageSrc) {
-            modalBody.innerHTML = `<img src="${imageSrc}" alt="Enlarged Project View">`;
-            modal.classList.add('active');
-        }
-
-        function openPdfModal(pdfSrc) {
-            modalBody.innerHTML = `<embed src="${pdfSrc}" type="application/pdf">`;
-            modal.classList.add('active');
-        }
-
-        function closeModal() {
-            modal.classList.remove('active');
-            modalBody.innerHTML = '';
-        }
-
-        // Close modal when clicking outside content area
-        window.onclick = function(event) {
-            if (event.target === modal) {
-                closeModal();
+            function openModalWithContent(element) {
+                modalBody.innerHTML = '';
+                modalBody.appendChild(element);
+                modal.classList.add('active');
             }
-        }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                modalBody.innerHTML = '';
+            }
+
+            modalCloseBtn.addEventListener('click', closeModal);
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) closeModal();
+            });
+
+            // Resume Modal Link
+            if (resumeLink) {
+                resumeLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const embed = document.createElement('embed');
+                    embed.src = './assets/resume.pdf';
+                    embed.type = 'application/pdf';
+                    openModalWithContent(embed);
+                });
+            }
+
+            // Image Lightbox Triggers
+            document.querySelectorAll('.card-img-container').forEach(container => {
+                container.addEventListener('click', function() {
+                    const imgSrc = this.getAttribute('data-img');
+                    const img = document.createElement('img');
+                    img.src = imgSrc;
+                    img.alt = 'Enlarged View';
+                    openModalWithContent(img);
+                });
+            });
+
+            // PDF Modal Triggers
+            document.querySelectorAll('.open-pdf-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const pdfSrc = this.getAttribute('data-pdf');
+                    const embed = document.createElement('embed');
+                    embed.src = pdfSrc;
+                    embed.type = 'application/pdf';
+                    openModalWithContent(embed);
+                });
+            });
+        });
     </script>
 </body>
 </html>
