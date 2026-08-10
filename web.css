@@ -420,25 +420,75 @@ body {
   border: none;
 }
 
-/* Contact Form Styles */
-.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
-.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
-.form-group label { font-size: 0.9rem; font-weight: 600; color: var(--text-heading); }
-.form-group input, .form-group textarea { 
-    width: 100%; 
-    padding: 0.75rem; 
-    border: 1px solid var(--border-subtle); 
-    border-radius: var(--radius-sm); 
-    font-family: var(--font-stack);
-    font-size: 0.95rem;
-    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+/* --- 8. CONTACT SECTION --- */
+.contact-section {
+  margin-top: 5rem;
+  padding-top: 3.5rem;
+  border-top: 1px solid var(--border-subtle);
+  display: flex;
+  justify-content: center;
 }
-.form-group input:focus, .form-group textarea:focus { 
-    outline: none; 
-    border-color: var(--accent-blue); 
-    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.15); 
+
+.contact-container {
+  width: 100%;
+  max-width: 650px;
+  background-color: var(--card-bg);
+  padding: 3rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-elevation);
 }
-/* --- 8. RESPONSIVE BREAKPOINTS --- */
+
+.contact-text {
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+  font-size: 1rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.form-group input, .form-group textarea {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-stack);
+  font-size: 0.95rem;
+  transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+}
+
+.form-group input:focus, .form-group textarea:focus {
+  outline: none;
+  border-color: var(--accent-blue);
+  box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.15);
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 0.85rem;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+/* --- 9. RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 768px) {
   body { padding: 1.5rem 1rem; }
   .hero-section { justify-content: center; text-align: center; }
@@ -447,4 +497,5 @@ body {
   .modal { padding: 0.5rem; }
   .modal-content { height: 90vh; }
   .modal-close { top: 10px; right: 15px; }
+  .contact-container { padding: 2rem 1.5rem; }
 }
