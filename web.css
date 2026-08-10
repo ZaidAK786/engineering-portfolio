@@ -420,6 +420,24 @@ body {
   border: none;
 }
 
+/* Contact Form Styles */
+.contact-form { display: flex; flex-direction: column; gap: 1.25rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group label { font-size: 0.9rem; font-weight: 600; color: var(--text-heading); }
+.form-group input, .form-group textarea { 
+    width: 100%; 
+    padding: 0.75rem; 
+    border: 1px solid var(--border-subtle); 
+    border-radius: var(--radius-sm); 
+    font-family: var(--font-stack);
+    font-size: 0.95rem;
+    transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+}
+.form-group input:focus, .form-group textarea:focus { 
+    outline: none; 
+    border-color: var(--accent-blue); 
+    box-shadow: 0 0 0 3px rgba(3, 102, 214, 0.15); 
+}
 /* --- 8. RESPONSIVE BREAKPOINTS --- */
 @media (max-width: 768px) {
   body { padding: 1.5rem 1rem; }
