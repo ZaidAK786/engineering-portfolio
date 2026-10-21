@@ -2,6 +2,8 @@
 
 Graduate Aerospace Engineering student specializing in CAD-driven design, CFD analysis, and engineering system validation. Experienced in developing mechanical prototypes, conducting high-fidelity simulations, and translating theoretical models into practical engineering solutions. Passionate about applying AI/ML and data science to advance simulation-driven engineering.
 
+**Resume**: [Resume-Zaid-Khan.pdf](https://zaidak786.github.io/engineering-portfolio/reports/Resume-Zaid-Khan.pdf)
+
 **Link to engineering and research portfolio**: (https://tinyurl.com/ZK-eng-portfolio)
 
 ## Featured Projects
